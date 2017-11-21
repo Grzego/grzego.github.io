@@ -1,0 +1,82 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+div {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .post-list .post-preview .post-img {
+    float: right;
+    width: 35%;
+    margin-bottom: 0;
+  }
+}
+
+.post-list .post-preview .post-img {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+
+.post-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-list .post-meta {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.post-list .post-preview .post-meta {
+  float: left;
+  width: 15%;
+  margin-top: 8px;
+}
+
+@media (min-width: 768px) {
+  .post-list .post-preview .post-desc {
+    font-size: 15px;
+    float: left;
+    width: 40%;
+  }
+}
+
+.post-list .post-preview .post-desc {
+  text-align: justify;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.post-list {
+  margin-left: 0;
+  list-style: none;
+  font-size: 17pt;
+}
+
+.site-footer .site-footer-repo {
+  float: left;
+  width: 40%;
+  display: block;
+}
+
+.site-footer .site-about-me {
+  text-align: justify;
+  float: right;
+  width: 45%;
+  margin-bottom: 120px;
+}
+
+.site-footer .site-footer-quote {
+  margin-top: 50px;
+}
