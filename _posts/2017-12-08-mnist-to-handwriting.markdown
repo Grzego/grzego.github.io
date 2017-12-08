@@ -7,9 +7,9 @@ description:  "Training a model for turning thinned MNIST digit images into hand
 repository: https://github.com/Grzego/mnist-handwriting-dataset
 ---
 
-Some time ago on my repository [I was ask](https://github.com/Grzego/handwriting-generation/issues/2) whether a model for handwriting can be used to generate sequence of numbers. As it turn out, the quality of such handwritten numbers was pretty bad. Although the problem seems quite easy there is no good dataset to train model on. So I decided to try creating a model to generate such dataset.
+Some time ago on my repository [I was ask](https://github.com/Grzego/handwriting-generation/issues/2) whether a model for handwriting can be used to generate sequence of numbers. As it turn out, the quality of such handwritten numbers was pretty bad. Although the problem seems to be quite easy there is no good dataset to train model on. So I decided to create a model to generate such dataset.
 
-Task is to take an image of digit and label as the input and produce sequence of points representing that digit. Because we are speaking of sequences, natural thing is to try applying Recurrent Neural Network (RNN) [[1]].
+The task is to take an image of digit and label as the input and produce sequence of points representing that digit. Because we are speaking of sequences, natural thing is to try applying Recurrent Neural Network (RNN) [[1]].
 
 To make this task a little simpler we are going to use a thinned version of MNIST dataset [[2]]. This way our model won't need to learn how to represent thickness of a line, but we trade the overall quality of some digits due to thinning process.
 
