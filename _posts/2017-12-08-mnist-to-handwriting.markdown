@@ -410,7 +410,7 @@ Image below shows how model works when instead of image of actual digit we inser
 
 ## Code and handwritten MNIST dataset
 
-I put code for current best current model on [github repository](https://github.com/Grzego/mnist-handwriting-dataset) as well as handwritten MNIST dataset, available freely to anyone interested. 😁
+I put code for current best model on [github repository](https://github.com/Grzego/mnist-handwriting-dataset) as well as handwritten MNIST dataset, available freely to anyone interested. 😁
 
 
 ---
