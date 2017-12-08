@@ -14,7 +14,7 @@ Task is to take an image of digit and label as the input and produce sequence of
 To make this task a little simpler we are going to use a thinned version of MNIST dataset [[2]]. This way our model won't need to learn how to represent thickness of a line, but we trade the overall quality of some digits due to thinning process.
 
 <p align="center">
-	<img src="{{ "/assets/images/mnist-to-handwriting/title.png" | absolute_url }}"/>
+	<img src="{{ "/assets/images/mnist-to-handwriting/title.png" }}"/>
 </p>
 
 
@@ -26,7 +26,7 @@ We only have image and label. Here comes the second idea. We need something able
 
 
 <p align="center">
-  <img src="{{ "/assets/images/mnist-to-handwriting/model.png" | absolute_url }}"/>
+  <img src="{{ "/assets/images/mnist-to-handwriting/model.png" }}"/>
 </p>
 
 
@@ -109,7 +109,7 @@ After training this network on 1.6 million images we can see that it gets pretty
 
 <div align="center">
   <p class="img-desc" align="center">Generated images</p>
-  <img class="slim-img" src="{{ "/assets/images/mnist-to-handwriting/generated-lines.png" | absolute_url }}"/>
+  <img class="slim-img" src="{{ "/assets/images/mnist-to-handwriting/generated-lines.png" }}"/>
   <p class="img-desc" align="center">Ground truth images</p>
 </div>
 
@@ -123,7 +123,7 @@ Having line model we can finally plug everything together and train out main mod
 ---
 
 <div align="center">
-  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation/nn.gif" | absolute_url }}"/>
+  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation/nn.gif" }}"/>
   <p class="img-desc" align="center">Top row shows ground truth, on middle one we can see how network draws and at the bottom is the reconstruction.</p>
 </div>
 
@@ -146,11 +146,11 @@ We can imagine a grid with 28 vertical lines and 28 horizontal lines (because of
 <!-- First row -->
 <div class="line-left">
   <p alin="center">Example grid of 8x8 pixels.</p>
-  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step1.png" | absolute_url }}">
+  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step1.png" }}">
 </div>
 <div class="line-right">
   <p align="center">Vertical lines for testing which pixel should be on line.</p>
-  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step2.png" | absolute_url }}">
+  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step2.png" }}">
 </div>
 <br style="clear:both;"/>
 </div>
@@ -159,11 +159,11 @@ We can imagine a grid with 28 vertical lines and 28 horizontal lines (because of
 <!-- Second row -->
 <div class="line-left">
   <p align="center">Let's add a segment.</p>
-  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step3.png" | absolute_url }}">
+  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step3.png" }}">
 </div>
 <div class="line-right">
   <p align="center">Then extend it to line and calculate all intersection points.</p>
-  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step4.png" | absolute_url }}">
+  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step4.png" }}">
 </div>
 <br style="clear:both;"/>
 </div>
@@ -172,11 +172,11 @@ We can imagine a grid with 28 vertical lines and 28 horizontal lines (because of
 <!-- Third row -->
 <div class="line-left">
   <p align="center">Now we create first mask with every pixel that is below (or on) intersection point.</p>
-  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step5.png" | absolute_url }}">
+  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step5.png" }}">
 </div>
 <div class="line-right">
   <p align="center">And another mask with every pixel that is above (or on) intersection point.</p>
-  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step6.png" | absolute_url }}">
+  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step6.png" }}">
 </div>
 <br style="clear:both;"/>
 </div>
@@ -184,25 +184,25 @@ We can imagine a grid with 28 vertical lines and 28 horizontal lines (because of
 
 <div class="whole-line-normal">
   <p align="center">Multiplying those mask gives as part of a line.</p>
-  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step7.png" | absolute_url }}"/>
+  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step7.png" }}"/>
 </div>
 
 
 <div class="whole-line-normal">
   <p align="center">Repeating the same process for horizontal lines gives as another part of line.</p>
-  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step8.png" | absolute_url }}"/>
+  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step8.png" }}"/>
 </div>
 
 
 <div class="whole-line-normal">
   <p align="center">Next we take element-wise maximum over masks. This gives as final line.</p>
-  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step9.png" | absolute_url }}"/>
+  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step9.png" }}"/>
 </div>
 
 
 <div class="whole-line-normal">
   <p align="center">But we need to do one more thing. Turn line into segment. To do this, we create another mask that have every pixel in rectangle that contains original segment. Finally we can multiply this mask with our line to obtain segment.</p>
-  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step10.png" | absolute_url }}"/>
+  <img src="{{ "/assets/images/mnist-to-handwriting/line-drawing/step10.png" }}"/>
 </div>
 
 
@@ -285,7 +285,7 @@ So I trained same model as before, just changed `run_line_model` method. Similar
 ---
 
 <div class="whole-line-normal">
-  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation/lm.gif" | absolute_url }}"/>
+  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation/lm.gif" }}"/>
 </div>
 
 ---
@@ -303,7 +303,7 @@ Because this network is relatively large for this task it's probably a good idea
 ---
 
 <div class="whole-line-normal">
-  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation/dropout.gif" | absolute_url }}"/>
+  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation/dropout.gif" }}"/>
 </div>
 
 ---
@@ -324,7 +324,7 @@ generated = tf.maximum(generated, run_line_model(tf.concat([p1, p2], axis=-1)))
 ---
 
 <div class="whole-line-normal">
-  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation/max.gif" | absolute_url }}"/>
+  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation/max.gif" }}"/>
 </div>
 
 ---
@@ -359,7 +359,7 @@ loss += 0.01 * aux_angle_loss
 ---
 
 <div class="whole-line-normal">
-  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation/aux-losses.gif" | absolute_url }}"/>
+  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation/aux-losses.gif" }}"/>
 </div>
 
 ---
@@ -375,7 +375,7 @@ So far the best model I was able to train to generate digits was in fact an ense
 ---
 
 <div class="whole-line-normal">
-  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation/separate-models.gif" | absolute_url }}"/>
+  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation/separate-models.gif" }}"/>
 </div>
 
 ---
@@ -385,7 +385,7 @@ The results are really good. But I wanted the drawing to look more human like, s
 ---
 
 <div class="whole-line-normal">
-  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation/best-model.gif" | absolute_url }}"/>
+  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation/best-model.gif" }}"/>
 </div>
 
 ---
@@ -401,7 +401,7 @@ Image below shows how model works when instead of image of actual digit we inser
 
 <div class="whole-line-normal">
   <p align="center">Drawings when instead of digit image we use only zeros.</p>
-  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation-fun.gif" | absolute_url }}"/>
+  <img src="{{ "/assets/images/mnist-to-handwriting/handwriting-animation-fun.gif" }}"/>
   <p align="center">Drawings when we only give ones as input image.</p>
 </div>
 
