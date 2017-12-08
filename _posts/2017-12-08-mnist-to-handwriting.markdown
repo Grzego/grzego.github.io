@@ -364,7 +364,7 @@ loss += 0.01 * aux_angle_loss
 
 ---
 
-Theoretically some digits like 6, 8 should look more human like and in fact with those auxiliary losses the results do look better in my opinion than before. 
+Theoretically some digits like 6, 8 should be more similar to those written by human and in fact with those auxiliary losses the results do look better in my opinion than before. 
 
 
 ### Separate model for each digit
@@ -380,7 +380,7 @@ So far the best model I was able to train to generate digits was in fact an ense
 
 ---
 
-The results are really good. But I wanted the drawing to look more human like, so I decided to collect small number of examples with consecutive points for each of digits. Later while training I do interchangeably gradient descent on MNIST data and those collected samples. Here are some results:
+The results are really good. But I wanted the digits to look more natural, so I decided to collect small number of examples with consecutive points for each of digits. Later while training I do interchangeably gradient descent on MNIST data and those collected samples. Here are some results:
 
 ---
 
