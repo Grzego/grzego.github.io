@@ -421,7 +421,7 @@ I put code for current best model on [github repository](https://github.com/Grze
 
 ---
 
-_Hope you enjoyed this post! I appreciate any form of feedback and if you found any mistake, please let me know._
+_Hope you enjoyed this post! I appreciate any form of feedback and if you found any mistake, please let me know (email is on my <a href="{{ site.github.owner_url }}">github profile</a>)._
 
 
 [1]: http://colah.github.io/posts/2015-08-Understanding-LSTMs
